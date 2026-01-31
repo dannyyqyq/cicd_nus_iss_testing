@@ -2,16 +2,16 @@ package sg.edu.nus.iss.d13revision.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
 
-import lombok.extern.slf4j.Slf4j;
-
 @RestController
-@Slf4j
 public class DataController {
+    private static final Logger log = LoggerFactory.getLogger(DataController.class);
     @GetMapping("/")
     public String healthCheck() {
         log.info("Health check endpoint called");
